@@ -1,0 +1,210 @@
+/* 기본 폰트 및 리셋 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f5f5f7;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.mainbox {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 4rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* --- 모바일 최적화 --- */
+@media (max-width: 768px) {
+    body {
+        background-color: #fff;
+    }
+
+    .mainbox {
+        margin: 0;
+        padding: 2rem 1.5rem;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .my-name {
+        font-size: 2.2rem !important;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+    }
+
+    .item-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+}
+
+/* 헤더 & 섹션 타이틀 */
+.title-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.my-field {
+    color: #0071e3;
+    font-weight: 700;
+}
+
+.my-name {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    color: #1d1d1f;
+}
+
+.tagline {
+    color: #86868b;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: #0071e3;
+    text-transform: uppercase;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin: 2.5rem 0 1.2rem;
+}
+
+/* 프로젝트 카드 */
+.project-item {
+    position: relative;
+    background: #fbfbfd;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #f2f2f2;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    background: #ffffff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: #0071e3;
+}
+
+.project-item.highlight {
+    border-left: 4px solid #0071e3;
+}
+
+/* 카드 전체를 덮는 투명 링크 */
+.main-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    /* 낮은 우선순위 */
+}
+
+/* 별도의 깃허브 링크 */
+.github-link {
+    position: relative;
+    z-index: 2;
+    /* 카드 전체 링크보다 위에 위치하여 개별 클릭 가능 */
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #0071e3;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.github-link:hover {
+    color: #004fb0;
+}
+
+.project-item:hover .github-link {
+    transform: translateX(5px);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.project-tag {
+    font-size: 0.75rem;
+    background: #e8e8ed;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.project-item .text {
+    font-size: 0.95rem;
+    color: #424245;
+}
+
+/* 경험 및 연락처 */
+.exp-item {
+    margin-bottom: 1.5rem;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.item-header .date {
+    font-size: 0.9rem;
+    color: #86868b;
+}
+
+.connect-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: #f8f9fa;
+    padding: 24px;
+    border-radius: 12px;
+}
+
+.connect-item a {
+    color: #0071e3;
+}
+
+.connect-item a:hover {
+    color: #004fb0;
+}
+
+@media (max-width: 500px) {
+    .connect-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    text-align: center;
+    color: #86868b;
+    font-size: 0.8rem;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+}
