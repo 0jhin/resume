@@ -14,7 +14,6 @@ body {
     color: #333;
 }
 
-/* 기본적으로 모든 링크 밑줄 제거 */
 a {
     text-decoration: none !important;
     color: inherit;
@@ -89,9 +88,8 @@ h2 {
     margin: 2.5rem 0 1.2rem;
 }
 
-/* 프로젝트 카드 공통 */
+/* 프로젝트 카드 디자인 */
 .project-item {
-    position: relative;
     background: #fbfbfd;
     padding: 24px;
     border-radius: 12px;
@@ -100,6 +98,7 @@ h2 {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* 카드 자체 호버 시 살짝 떠오름 */
 .project-item:hover {
     transform: translateY(-5px);
     background: #ffffff;
@@ -111,34 +110,42 @@ h2 {
     border-left: 4px solid #0071e3;
 }
 
-/* 1. 카드 전체를 덮는 투명 링크 */
-.main-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
-/* 2. 카드 내부 개별 링크 (AOS, iOS, GitHub 등) */
+/* 개별 하위 링크 공통 스타일 */
 .sub-link,
-.github-link {
-    position: relative;
-    z-index: 2;
-    /* 카드 전체 링크보다 위에 위치 */
+.btn-link {
     color: #0071e3;
+    font-weight: 500;
     transition: all 0.2s ease;
 }
 
-/* 마우스 오버 시 밑줄 효과 */
 .sub-link:hover,
-.github-link:hover {
+.btn-link:hover {
     text-decoration: underline !important;
     color: #004fb0;
 }
 
-/* 프로젝트 헤더 및 태그 */
+/* 프로젝트 버튼 그룹 */
+.project-links {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    /* 버튼 사이 간격 */
+}
+
+.btn-link {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* GitHub 버튼에만 화살표 애니메이션 효과 유지 */
+.btn-link.github {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.project-item:hover .btn-link.github {
+    transform: translateX(5px);
+}
+
 .project-header {
     display: flex;
     justify-content: space-between;
@@ -152,26 +159,11 @@ h2 {
     padding: 3px 10px;
     border-radius: 20px;
     color: #555;
-    z-index: 2;
-    /* 태그 영역 보호 */
 }
 
 .project-item .text {
     font-size: 0.95rem;
     color: #424245;
-    margin-bottom: 8px;
-}
-
-/* 깃허브 링크 특정 스타일 */
-.github-link {
-    display: inline-block;
-    margin-top: 12px;
-    font-size: 0.9rem;
-    font-weight: 700;
-}
-
-.project-item:hover .github-link {
-    transform: translateX(5px);
 }
 
 /* 경험 및 연락처 */
@@ -220,4 +212,36 @@ footer {
     font-size: 0.8rem;
     margin-top: 3rem;
     padding-bottom: 2rem;
+}
+
+/* PDF 인쇄 최적화 */
+@media print {
+    body {
+        background-color: #fff !important;
+        /* 구형 크롬, 사파리용 */
+        -webkit-print-color-adjust: exact; 
+        /* 최신 표준 브라우저용 (Firefox 등) */
+        print-color-adjust: exact; 
+    }
+    
+    .project-item.highlight {
+        /* 인쇄 시 파란색 테두리가 사라지지 않게 함 */
+        border-left: 4px solid #0071e3 !important;
+    }
+
+    .mainbox {
+        margin: 0 auto !important;
+        box-shadow: none !important;
+        padding: 20px !important;
+        border: none !important;
+    }
+
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+    }
+
+    .project-item:hover {
+        transform: none !important;
+    }
 }
