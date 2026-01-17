@@ -264,34 +264,57 @@ footer {
 }
 
 /* PDF 인쇄 최적화 */
+/* PDF 인쇄 최적화 */
 @media print {
+    /* 배경색 및 이미지 강제 출력 */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
     body {
         background-color: #fff !important;
-        /* 구형 크롬, 사파리용 */
-        -webkit-print-color-adjust: exact; 
-        /* 최신 표준 브라우저용 (Firefox 등) */
-        print-color-adjust: exact; 
-    }
-    
-    .project-item.highlight {
-        /* 인쇄 시 파란색 테두리가 사라지지 않게 함 */
-        border-left: 4px solid #0071e3 !important;
+        color: #000 !important;
     }
 
+    /* 메인박스 여백 조정 (종이에 꽉 차게) */
     .mainbox {
-        margin: 0 auto !important;
-        box-shadow: none !important;
+        max-width: 100% !important;
+        margin: 0 !important;
         padding: 20px !important;
-        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
     }
 
-    section {
+    /* 타이틀 섹션 가로 정렬 유지 */
+    .title-section {
+        display: flex !important;
+        flex-direction: row !important; /* 인쇄 시에도 가로 유지 */
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .title-photo {
+        width: 120px !important;
+        height: 150px !important;
+        border: 1px solid #eee !important;
+    }
+
+    /* 페이지 끊김 방지 (프로젝트 카드가 중간에 잘리지 않게) */
+    section, .project-item, .exp-item {
         page-break-inside: avoid;
-        margin-bottom: 20px;
+        break-inside: avoid;
     }
 
-    .project-item:hover {
-        transform: none !important;
+    /* 링크 표시 제거 (URL 주소가 옆에 길게 붙는 것 방지) */
+    a::after {
+        content: none !important;
+    }
+
+    /* 불필요한 그림자 제거 */
+    .project-item {
+        box-shadow: none !important;
+        border: 1px solid #eee !important;
     }
 }
 
