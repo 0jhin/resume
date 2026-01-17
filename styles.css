@@ -265,8 +265,9 @@ footer {
 
 /* PDF 인쇄 최적화 */
 /* PDF 인쇄 최적화 */
+/* PDF 인쇄 최적화 - 1페이지 빈 공간 문제 해결 */
 @media print {
-    /* 배경색 및 이미지 강제 출력 */
+    /* 시스템 설정 무시하고 배경색 강제 출력 */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -274,46 +275,83 @@ footer {
 
     body {
         background-color: #fff !important;
-        color: #000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* 메인박스 여백 조정 (종이에 꽉 차게) */
     .mainbox {
         max-width: 100% !important;
         margin: 0 !important;
-        padding: 20px !important;
+        padding: 0 !important; /* 여백을 줄여 더 많은 내용을 담음 */
         box-shadow: none !important;
-        border-radius: 0 !important;
+        border: none !important;
+        display: block !important; /* Flex 대신 블록 레이아웃으로 변경 */
     }
 
-    /* 타이틀 섹션 가로 정렬 유지 */
+    /* 타이틀 섹션 빈 공간 발생 방지 */
     .title-section {
-        display: flex !important;
-        flex-direction: row !important; /* 인쇄 시에도 가로 유지 */
-        align-items: center !important;
-        justify-content: space-between !important;
+        display: block !important; /* Flex를 풀고 블록으로 변경 (인쇄 엔진 안정성) */
+        width: 100% !important;
+        margin-bottom: 2rem !important;
+        position: relative !important;
+        text-align: left !important; /* 텍스트 강제 좌측 정렬 */
     }
 
-    .title-photo {
-        width: 120px !important;
-        height: 150px !important;
-        border: 1px solid #eee !important;
+    .title-text {
+        display: block !important;
+        float: left !important; /* 구형 엔진에서도 좌측 고정 */
+        width: calc(100% - 150px) !important; /* 사진 공간 제외한 너비 확보 */
+        text-align: left !important;
     }
 
-    /* 페이지 끊김 방지 (프로젝트 카드가 중간에 잘리지 않게) */
-    section, .project-item, .exp-item {
-        page-break-inside: avoid;
-        break-inside: avoid;
+    .title-photo-container {
+        float: right !important; /* 사진을 강제로 우측으로 밀어냄 */
+        display: block !important;
     }
 
-    /* 링크 표시 제거 (URL 주소가 옆에 길게 붙는 것 방지) */
+    /* float 해제 (레이아웃 무너짐 방지) */
+    .title-section::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .my-name {
+        text-align: left !important;
+        margin-left: 0 !important;
+    }
+
+    .tagline {
+        text-align: left !important;
+    }
+
+    .title-text h1 {
+        margin: 0 !important;
+    }
+
+    /* 섹션 제목 간격 조정 */
+    h2 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 0.8rem !important;
+        page-break-before: auto !important;
+    }
+
+    /* 프로젝트/경험 카드 잘림 방지 */
+    .project-item, .exp-item, .about-me-section, .connect-section {
+        page-break-inside: avoid !important; /* 항목 중간에 페이지가 잘리지 않게 함 */
+        margin-bottom: 12px !important;
+    }
+
+    /* 링크 URL 주소 숨기기 */
     a::after {
         content: none !important;
     }
 
-    /* 불필요한 그림자 제거 */
+    /* PDF 인쇄 시 불필요한 그림자/애니메이션 제거 */
     .project-item {
         box-shadow: none !important;
+        transform: none !important;
+        background-color: #fbfbfd !important;
         border: 1px solid #eee !important;
     }
 }
