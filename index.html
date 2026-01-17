@@ -11,62 +11,81 @@
 <body>
   <main class="mainbox">
     <header class="title-section">
-      <p class="my-field">Android Developer</p>
-      <h1 class="my-name">권영진</h1>
-      <p class="tagline">"인프라의 안정성과 모바일의 UX를 잇는 개발자"</p>
+      <div class="title-text">
+        <p class="my-field">안드로이드 개발자</p>
+        <h1 class="my-name">권영진</h1>
+        <p class="tagline">"인프라의 안정성과 모바일의 UX를 잇는 안드로이드 개발자"</p>
+      </div>
+      <div class="title-photo">
+        <img src="profile.jpg" alt="권영진 프로필" onerror="this.style.display='none';"> 
+        <div class="photo-placeholder">PHOTO</div> </div>
     </header>
 
-    <section class="about-me-section">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <p><strong>3년의 네트워크 엔지니어링 경험</strong>을 기반으로 시스템의 흐름을 이해하는 개발자입니다. 현재는 Kotlin과 Flutter를 활용해 데이터 최적화와 안정적인 UI 구현에
-          집중하고 있습니다. 논리적인 추리로 문제를 진단하고, 1%의 불편함까지 해결하는 집요함을 지향합니다.</p>
-      </div>
-    </section>
-
     <section class="project-section">
-      <h2>Featured Projects</h2>
+      <h2>안드로이드 프로젝트</h2>
       <div class="project-list">
         <div class="project-item highlight">
           <div class="project-header">
-            <strong>DutyTable (팀장)</strong>
-            <div class="project-tag">
-              <span>Flutter / </span>
-              <a href="https://play.google.com/store/apps/details?id=com.schedulelab.dutytable" target="_blank"
-                class="sub-link">AOS</a>·<a
-                href="https://apps.apple.com/kr/app/%EB%8B%B9%EB%B2%88%ED%91%9C-duty-table/id6756906392" target="_blank"
-                class="sub-link">iOS</a> 출시
-            </div>
-          </div>
-          <p class="text">채팅 기반 공유 캘린더. <strong>API 리소스 60% 절감</strong> 및 제스처 간섭 문제 해결.</p>
-
-          <div class="project-links">
-            <a href="https://www.miricanvas.com/v2/design2/v/7793dad4-d175-4ffc-8b20-c5700f59cdd3" target="_blank"
-              class="btn-link">Presentation →</a>
-            <a href="https://github.com/LIKELION-Android-BOOTCAMP-5th/FinalProject-DutyTable-ScheduleLab"
-              target="_blank" rel="noopener" class="btn-link github">GitHub →</a>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <strong>Coffick (1인)</strong>
-            <span class="project-tag">Jetpack Compose</span>
+            <strong>Coffick</strong>
+            <span class="project-tag">개인 프로젝트</span>
           </div>
           <p class="text">위치 기반 카페 탐색. 코루틴 비동기 최적화로 <strong>네트워크 트래픽 60% 절감.</strong></p>
-
+          <div class="project-info">
+            <p>👤 <strong>인원:</strong> 1인 (기획, 디자인, 앱 개발)</p>
+            <p>🛠️ <strong>기술:</strong> Jetpack Compose, Kotlin, Android, Coroutines</p>
+            <p>📅 <strong>기간:</strong> 2025.09.12 ~ 2025.09.18 && 2026.02 ~ 2026.03</p>
+          </div>
           <div class="project-links">
-            <a href="https://www.figma.com/deck/VzptAY1Mrrcz4bhLVbuGC8" target="_blank" class="btn-link">Presentation
-              →</a>
-            <a href="https://github.com/0jhin/coffick" target="_blank" rel="noopener" class="btn-link github">GitHub
-              →</a>
+            <a href="https://www.figma.com/deck/VzptAY1Mrrcz4bhLVbuGC8" target="_blank" class="btn-link">Presentation →</a>
+            <a href="https://github.com/0jhin/coffick" target="_blank" rel="noopener" class="btn-link github">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 3rem;">그 외 프로젝트</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <div class="project-header">
+            <strong>Of Course</strong>
+            <span class="project-tag">팀 프로젝트</span>
+          </div>
+          <p class="text">사용자 맞춤형 코스 추천 및 토론 커뮤니티 서비스</p>
+          <div class="project-info">
+            <p>👥 <strong>인원:</strong> 4인 (기획, 앱 개발)</p>
+            <p>🛠️ <strong>기술:</strong> Flutter, Dart, MVVM</p>
+            <p>📅 <strong>기간:</strong> 2025.10.29 ~ 2025.11.21</p>
+            <p>✅ <strong>주요 역할:</strong> 
+              구글 OAuth 연동(회원가입/탈퇴/로그인), Supabase Realtime 기반 실시간 알림 구현, 
+              온보딩 프로세스 구축 및 기능별 UX 개선 피드백 반영
+            </p>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" class="btn-link">Presentation →</a>
+            <a href="#" target="_blank" rel="noopener" class="btn-link github">GitHub →</a>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-header">
+            <strong>DutyTable</strong>
+            <span class="project-tag">팀 프로젝트</span>
+          </div>
+          <p class="text">채팅 기반 공유 캘린더. <strong>API 리소스 60% 절감</strong> 및 제스처 간섭 문제 해결.</p>
+          <div class="project-info">
+            <p>👥 <strong>인원:</strong> 5인 (팀장, 기획, 앱 개발, 출시)</p>
+            <p>🛠️ <strong>기술:</strong> Flutter, Dart, MVVM</p>
+            <p>📅 <strong>기간:</strong> 2025.11 ~ 2026.01</p>
+            <p>🚀 <strong>출시:</strong> <a href="#" class="sub-link">AOS</a> / <a href="#" class="sub-link">iOS</a></p>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" class="btn-link">Presentation →</a>
+            <a href="#" target="_blank" rel="noopener" class="btn-link github">GitHub →</a>
           </div>
         </div>
       </div>
     </section>
 
     <section class="work-section">
-      <h2>Experience</h2>
+      <h2>경력사항</h2>
       <div class="exp-item">
         <div class="item-header">
           <strong class="title">멋쟁이사자처럼 (Android 개발 수료)</strong>
@@ -79,24 +98,30 @@
           <strong class="title">제이넷시스템즈 (네트워크 엔지니어)</strong>
           <span class="date">2022.05 - 2025.05 (3년)</span>
         </div>
-        <p class="text">대규모 무선 인프라 설계 및 장애 처리 시간 30% 단축</p>
+        <p class="text">대규모 무선 인프라 설계 및 구축</p>
+      </div>
+    </section>
+
+    <section class="about-me-section">
+      <h2>자기소개</h2>
+      <div class="about-content">
+        <p>
+          3년의 네트워크 엔지니어링 경험을 기반으로 <strong>시스템의 흐름을 이해하는 안드로이드 개발자입니다.</strong> 현재는 안드로이드 앱 개발자로서 데이터 최적화와 안정적인 UI 구현에 집중하고 있습니다. 논리적인 추리로 문제를 진단하고, 1%의 불편함까지 해결하는 집요함을 지향합니다.
+        </p>
       </div>
     </section>
 
     <section class="connect-section">
-      <h2>Connect</h2>
+      <h2>연락처</h2>
       <div class="connect-grid">
         <div class="connect-item">
           <p>📞 010-5780-0160</p>
           <p>📧 <a href="mailto:casper118412@gmail.com">casper118412@gmail.com</a></p>
         </div>
         <div class="connect-item">
-          <p>📂 <a href="https://funny-mall-9a2.notion.site/Android-2ea3d14966f2807baaaec73541476d30?source=copy_link"
-              target="_blank" rel="noopener">Portfolio (Notion)</a></p>
-          <p>📝 <a
-              href="https://funny-mall-9a2.notion.site/git-commit-m-Develoment-Learning-22d3d14966f280a6982ef143b845c6c5"
-              target="_blank" rel="noopener">Tech Blog (Notion)</a></p>
-          <p>🐙 <a href="https://github.com/0jhin" target="_blank" rel="noopener">GitHub</a></p>
+          <p>📂 <a href="#">Portfolio (Notion)</a></p>
+          <p>📝 <a href="#">Tech Blog (Notion)</a></p>
+          <p>🐙 <a href="#">GitHub</a></p>
         </div>
       </div>
     </section>
