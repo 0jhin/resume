@@ -274,6 +274,7 @@ footer {
 
 /* --- PDF 인쇄 최적화 --- */
 @media print {
+    /* 1. 기본 인쇄 설정 */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -281,53 +282,72 @@ footer {
 
     body {
         background-color: #fff !important;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
-    .mainbox {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 30px !important;
-        box-shadow: none !important;
-        display: block !important;
-    }
-
+    /* 2. 헤더(Title) 섹션 왼쪽 정렬 강제 고정 */
     .title-section {
-        display: block !important;
+        display: flex !important;
+        flex-direction: row !important; /* 가로 배열 유지 */
+        justify-content: space-between !important;
+        align-items: center !important;
+        text-align: left !important;    /* 중앙 정렬 방지 */
+        width: 100% !important;
         margin-bottom: 2rem !important;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #f0f0f0;
     }
 
     .title-text {
-        float: left !important;
-        width: 75% !important;
-        text-align: left !important;
+        flex: 1 !important;
+        text-align: left !important;    /* 텍스트 왼쪽 정렬 */
+    }
+
+    .my-name {
+        margin: 0 !important;           /* 이름 여백 초기화 */
+        font-size: 2.5rem !important;
+    }
+
+    .title-photo-container {
+        display: block !important;
+        margin-left: 20px !important;   /* 사진과 텍스트 사이 간격 */
     }
 
     .title-photo {
-        float: right !important;
         width: 110px !important;
-        height: 135px !important;
+        height: 140px !important;
     }
 
-    .title-section::after {
-        content: "";
-        display: table;
-        clear: both;
+    /* 3. 컨테이너 및 섹션 최적화 */
+    .mainbox {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
     }
 
-    .project-item,
-    .exp-item {
+    /* 4. 페이지 잘림 방지 */
+    .project-item, 
+    .exp-item, 
+    .connect-grid {
+        break-inside: avoid !important;
         page-break-inside: avoid !important;
-        border: 1px solid #eee !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    .project-info {
-        background: #f9f9fb !important;
-        border: 1px solid #f0f0f0 !important;
+    /* 5. 불필요한 요소 숨기기 */
+    .modal, dialog, .close-modal, .project-links {
+        display: none !important;
     }
 
-    .btn-link,
-    a::after {
-        content: none !important;
+    /* 6. 모바일 대응 스타일이 인쇄 시 적용되지 않도록 초기화 */
+    @media (max-width: 768px) {
+        .title-section {
+            flex-direction: row !important; /* 모바일 인쇄 시에도 가로 유지 */
+        }
     }
 }
 
@@ -430,4 +450,45 @@ dialog[open] {
 @keyframes modal-show {
     from { opacity: 0; transform: translate(-50%, -45%); }
     to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* --- 자기소개 섹션 디자인 (줄글 형태) --- */
+.about-me-section {
+    margin-bottom: 3rem;
+}
+
+.about-paragraph {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid #f2f2f7; /* 은은한 왼쪽 라인으로 문단 구분 */
+    transition: border-color 0.3s ease;
+}
+
+.about-paragraph:hover {
+    border-left-color: #0071e3; /* 마우스 호버 시 포인트 컬러 강조 */
+}
+
+.about-sub-title {
+    font-size: 1.1rem;
+    color: #1d1d1f;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.about-text {
+    font-size: 0.95rem;
+    color: #424245;
+    line-height: 1.8;
+    word-break: keep-all; /* 단어 단위 줄바꿈으로 깔끔하게 */
+    text-align: justify;  /* 양끝 정렬로 정돈된 느낌 */
+}
+
+/* PDF 인쇄 시 최적화 */
+@media print {
+    .about-paragraph {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        border-left: 3px solid #0071e3 !important; /* 인쇄 시 라인 고정 */
+        margin-bottom: 1.5rem !important;
+    }
 }
