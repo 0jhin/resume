@@ -42,9 +42,9 @@ const projectData = {
         stack: 'Jetpack Compose, Kotlin, Coroutine, Kakao Local API',
         achievements: ['네트워크 트래픽 60% 이상 최적화'],
         tasks: [
-            'Jetpack Compose 기반의 현대적인 안드로이드 UI 구조 설계',
-            'Naver 지도 API 연동 및 커스텀 마커/클러스터링 기능 구현',
-            'Kakao Local API를 활용한 위치 기반 장소 검색 기능 구축'
+            'Kakao Local API를 활용한 위치 기반 장소 검색 기능 구축',
+            'Kotlin Coroutines를 활용한 비동기 데이터 로딩 최적화',
+            '네트워크 캐싱 전략 수립을 통한 데이터 사용량 60% 절감'
         ],
         troubleshooting: [
             {
