@@ -1,9 +1,31 @@
 const projectData = {
+    '커픽 - Coffick': {
+        subtitle: '사용자 목적 중심의 테마별 카페 큐레이션 서비스',
+        period: '2025.09.12 ~ 2025.09.18',
+        role: '1인 개발 | 기획, 디자인, 전체 개발',
+        stack: 'Jetpack Compose, Kotlin, Coroutines, Retrofit2, RESTful API',
+        achievements: ['네트워크 트래픽 60% 이상 최적화'],
+        tasks: [
+            'Kakao Local API를 활용한 위치 기반 장소 검색 기능 구축',
+            'Kotlin Coroutines를 활용한 비동기 데이터 로딩 최적화',
+            '네트워크 캐싱 전략 수립을 통한 데이터 사용량 60% 절감'
+        ],
+        troubleshooting: [
+            {
+                problem: "GPS 수신 지연으로 인해 스플래시 이후 지도 위치가 급격히 점프하는 현상",
+                solution: "Kotlin Coroutine을 사용하여 위치 정보 수신 완료 시점과 스플래시 종료 시점을 동기화하여 자연스러운 화면 진입 구현"
+            },
+            {
+                problem: "지도 이동 시마다 발생하는 무분별한 API 요청으로 인한 리소스 소모",
+                solution: "이벤트 기반 호출(현재 위치에서 재검색 버튼) 전략으로 전환하여 불필요한 네트워크 통신 차단 및 트래픽 60% 절감"
+            }
+        ]
+    },
     'DutyTable': {
-        subtitle: '지인과 함께하는 채팅 기반 공유 캘린더',
+        subtitle: '지인과 함께하는 채팅 기반 공유 캘린더 서비스',
         period: '2025.11.21 ~ 2026.01.13',
         role: '팀장 | 서비스 설계, 앱 개발, 출시 리드',
-        stack: 'Flutter, Firebase(FCM), Supabase, Provider, MVVM',
+        stack: 'Flutter, Dart, Dio, RESTful API, MVVM, Clean Architecture, OAuth2',
         achievements: ['API 리소스 60% 절감', 'Android/iOS 크로스 플랫폼 출시 성공'],
         tasks: [
             '서비스 기획 및 RDBMS/Storage 인프라 설계 (Supabase)',
@@ -23,40 +45,19 @@ const projectData = {
         ]
     },
     'Of Course': {
-        subtitle: '맞춤형 코스 추천 및 토론 커뮤니티',
+        subtitle: '사용자 맞춤형 코스 추천 및 토론 커뮤니티 서비스',
         period: '2025.10.29 ~ 2025.11.21',
         role: '팀원 | 인증 시스템 및 실시간 기능 개발',
-        stack: 'Flutter, Supabase Realtime, Provider, Naver Map SDK',
-        achievements: ['Supabase 기반 인증 시스템 및 실시간 알림 기능 성공적 구현'],
+        stack: 'Flutter, Dart, Supabase, Provider, Naver Map SDK, OAuth2',
+        achievements: ['Supabase 기반 인증 시스템 및 실시간 알림 기능 성공적 구현', '앱 안전성 피드백을 통한 사용성 20% 향상'],
         tasks: [
-            'Supabase Auth를 통한 구글 로그인 및 회원 관리(가입/탈퇴) 로직 전담',
-            'Supabase Realtime을 활용한 사용자 간 실시간 인터랙션 알림 구현',
+            'Supabase oAuth를 통한 구글 로그인 및 회원 관리(가입/탈퇴) 로직 전담',
+            'Supabase Realtime 기반의 실시간 알림 기능 구현',
             '사용자 경험 개선을 위한 앱 온보딩 프로세스 구축',
             '코드 리뷰 및 디버깅을 통한 전체적인 앱 안정성 피드백 수행'
         ]
     },
-    '커픽 - Coffick': {
-        subtitle: '사용자 목적 중심의 테마별 카페 큐레이션 서비스',
-        period: '2025.09.12 ~ 2025.09.18',
-        role: '1인 개발 | 기획, 디자인, 전체 개발',
-        stack: 'Jetpack Compose, Kotlin, Coroutine, Kakao Local API',
-        achievements: ['네트워크 트래픽 60% 이상 최적화'],
-        tasks: [
-            'Kakao Local API를 활용한 위치 기반 장소 검색 기능 구축',
-            'Kotlin Coroutines를 활용한 비동기 데이터 로딩 최적화',
-            '네트워크 캐싱 전략 수립을 통한 데이터 사용량 60% 절감'
-        ],
-        troubleshooting: [
-            {
-                problem: "GPS 수신 지연으로 인해 스플래시 이후 지도 위치가 급격히 점프하는 현상",
-                solution: "Kotlin Coroutine을 사용하여 위치 정보 수신 완료 시점과 스플래시 종료 시점을 동기화하여 자연스러운 화면 진입 구현"
-            },
-            {
-                problem: "지도 이동 시마다 발생하는 무분별한 API 요청으로 인한 리소스 소모",
-                solution: "이벤트 기반 호출(현재 위치에서 재검색 버튼) 전략으로 전환하여 불필요한 네트워크 통신 차단 및 트래픽 60% 절감"
-            }
-        ]
-    }
+    
 };
 
 const modal = document.getElementById('project-modal');
