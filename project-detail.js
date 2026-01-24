@@ -28,6 +28,7 @@ const projectData = {
         stack: 'Flutter, Dart, Dio, RESTful API, MVVM, Clean Architecture, OAuth2',
         achievements: ['API 리소스 60% 절감', 'Android/iOS 크로스 플랫폼 출시 성공'],
         tasks: [
+            '팀장으로서 프로젝트 매니징 및 전체 일정 관리',
             '서비스 기획 및 RDBMS/Storage 인프라 설계 (Supabase)',
             'Firebase Cloud Messaging(FCM) 기반 푸시 알림 및 헤드업 알림 구현',
             '개인/공유 캘린더 엔진 및 홈 위젯(AOS/iOS) 개발',
