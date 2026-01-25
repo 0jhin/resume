@@ -26,35 +26,53 @@
     <section class="project-section">
       <h2>안드로이드 프로젝트</h2>
       <div class="project-list">
-        <div class="project-item highlight">
+        <div class="project-item highlight no-cursor">
           <div class="project-header">
             <div>
               <strong class="project-title">커픽 - Coffick</strong>
-              <span class="project-date">2025.09 - 2025.09</span>
+              <span class="project-date">2025.09.12 - 2025.09.18</span>
             </div>
-            <span class="project-tag">개인 프로젝트</span>
+            <span class="project-tag">Jetpack Compose 프로젝트</span>
           </div>
           <p class="text">사용자 목적(애견 동반·가족 모임 등) 중심의 <strong>테마별 카페 큐레이션 서비스</strong></p>
+
           <div class="project-info">
             <div class="info-group">
-              <strong class="label blue">주요 역할</strong>
+              <strong class="label blue">주요 역할 및 성과</strong>
               <ul class="role-list">
                 <li><strong>Kakao Local API</strong>를 활용한 위치 기반 장소 검색 기능 구축</li>
                 <li><strong>Kotlin Coroutines</strong>를 활용한 비동기 데이터 로딩 최적화</li>
-                <li>네트워크 캐싱 전략 수립을 통한 <strong>데이터 사용량 60% 절감</strong></li>
+                <li>이벤트 기반 호출 전략으로 <strong>데이터 사용량 60% 절감</strong></li>
               </ul>
             </div>
+
+            <div class="info-group">
+              <strong class="label green">문제 및 해결 과정</strong>
+
+              <div class="trouble-box">
+                <p class="problem">GPS 수신 지연으로 인해 스플래시 이후 지도 위치가 급격히 점프하는 현상</p>
+                <p class="solution">Kotlin Coroutine을 사용하여 위치 정보 수신 완료 시점과 스플래시 종료 시점을 동기화하여 자연스러운 화면 진입 구현</p>
+              </div>
+
+              <div class="trouble-box">
+                <p class="problem">지도 이동 시마다 발생하는 무분별한 API 요청으로 인한 리소스 소모</p>
+                <p class="solution">이벤트 기반 호출 전략으로 전환하여 불필요한 네트워크 통신 차단 및 트래픽 60% 절감</p>
+              </div>
+            </div>
+
             <div class="info-group">
               <strong class="label">기술 스택</strong>
               <p class="tech-stack"><strong>Jetpack Compose, Kotlin, Coroutines, Retrofit2, RESTful API</strong></p>
             </div>
-            <div class="info-footer">
-              <span>👤 1인 (기획, 디자인, 전체 개발)</span>
-            </div>
           </div>
+
+          <div class="info-footer">
+            <span>👤 1인 (기획, 디자인, 전체 개발)</span>
+          </div>
+
           <div class="project-links">
-            <a href="https://www.figma.com/deck/VzptAY1Mrrcz4bhLVbuGC8" target="_blank" class="btn-link primary">프로젝트 상세 보기
-              →</a>
+            <a href="https://www.figma.com/deck/VzptAY1Mrrcz4bhLVbuGC8" target="_blank" class="btn-link primary">프로젝트 상세
+              보기 →</a>
             <a href="https://github.com/0jhin/coffick" target="_blank" class="btn-link github">GitHub →</a>
           </div>
         </div>
@@ -62,44 +80,62 @@
 
       <h2 style="margin-top: 3rem;">그 외 프로젝트</h2>
       <div class="project-list">
-        <div class="project-item">
+        <div class="project-item no-cursor">
           <div class="project-header">
             <div>
               <strong class="project-title">DutyTable</strong>
-              <span class="project-date">2025.11 - 2026.01</span>
+              <span class="project-date">2025.11.21 - 2026.01.13</span>
             </div>
-            <span class="project-tag">팀 프로젝트</span>
+            <span class="project-tag">Flutter 프로젝트</span>
           </div>
-          <p class="text">지인과 함께하는 <strong>채팅 기반 공유 캘린더 서비스</strong></p>
+          <p class="text">지인과 함께하는 채팅 기반 <strong>공유 캘린더 서비스</strong></p>
+
           <div class="project-info">
             <div class="info-group">
-              <strong class="label blue">주요 역할</strong>
+              <strong class="label blue">주요 역할 및 성과</strong>
               <ul class="role-list">
-                <li>팀장으로서 <strong>프로젝트 매니징 및 전체 일정 관리</strong></li>
-                <li><strong>서비스 기획 및 RDBMS/Storage 인프라 설계</strong> (Supabase)</li>
+                <li>팀장으로서 프로젝트 매니징 및 전체 일정 관리</li>
+                <li>서비스 기획 및 RDBMS/Storage 인프라 설계(Supabase)</li>
                 <li>Firebase Cloud Messaging(FCM) 기반 <strong>푸시 알림 및 헤드업 알림 구현</strong></li>
-                <li><strong>홈 위젯(AOS/iOS) 개발</strong></li>
-                <li><strong>Apple/Google OAuth 소셜 로그인 연동</strong></li>
+                <li><strong>홈 위젯(AOS/iOS) 동시 개발</strong></li>
+                <li>Apple/Google OAuth 소셜 로그인 연동</li>
+                <li>Android/iOS 스토어 출시 완료</li>
+                <li>전체 데이터 사전 로딩 전략으로 <strong>API 리소스 60% 절감</strong></li>
               </ul>
             </div>
+
+            <div class="info-group">
+              <strong class="label green">문제 및 해결 과정</strong>
+              <div class="trouble-box">
+                <p class="problem"><strong></strong> 반복적인 서버 호출로 인한 API 리소스 낭비</p>
+                <p class="solution"><strong></strong> 전체 데이터 사전 로딩(Pre-loading) 및 클라이언트 필터링으로 호출 60% 절감</p>
+              </div>
+              <div class="trouble-box">
+                <p class="problem"><strong></strong> 지도와 시스템 스크롤 간의 간섭 현상</p>
+                <p class="solution"><strong></strong> 제스처 우선권 설정을 통해 지도 내 터치 우선권 최적화로 조작감 개선</p>
+              </div>
+            </div>
+
             <div class="info-group">
               <strong class="label">기술 스택</strong>
               <p class="tech-stack"><strong>Flutter, Dart, Dio, RESTful API, MVVM, Clean Architecture, OAuth2</strong></p>
             </div>
-            <div class="info-footer">
-              <span>👥 5인 (팀장, [시스템 설계 - 앱 개발 - 출시] 리드)</span>
-              <div class="launch-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.schedulelab.dutytable&pcampaignid=web_share"
-                  target="_blank" class="store-btn aos">
-                  <span class="icon">🚀</span> Google Play
-                </a>
-                <a href="https://apps.apple.com/kr/app/%EB%8B%B9%EB%B2%88%ED%91%9C-duty-table/id6756906392"
-                  target="_blank" class="store-btn ios">
-                  <span class="icon"></span> App Store
-                </a>
-              </div>
+          </div>
+
+          <div class="info-footer">
+            <span>👥 5인 (팀장, [시스템 설계 - 앱 개발 - 출시] 리드)</span>
+            <div class="launch-buttons">
+              <a href="https://play.google.com/store/apps/details?id=com.schedulelab.dutytable&pcampaignid=web_share"
+                target="_blank" class="store-btn aos">
+                <span class="icon">🚀</span> Google Play
+              </a>
+              <a href="https://apps.apple.com/kr/app/%EB%8B%B9%EB%B2%88%ED%91%9C-duty-table/id6756906392"
+                target="_blank" class="store-btn ios">
+                <span class="icon"></span> App Store
+              </a>
             </div>
           </div>
+
           <div class="project-links">
             <a href="https://www.miricanvas.com/v2/design2/v/7793dad4-d175-4ffc-8b20-c5700f59cdd3" target="_blank"
               class="btn-link primary">프로젝트 상세 보기 →</a>
@@ -107,42 +143,45 @@
               target="_blank" class="btn-link github">GitHub →</a>
           </div>
         </div>
-        <div class="project-item">
+
+        <div class="project-item no-cursor">
           <div class="project-header">
             <div>
               <strong class="project-title">Of Course</strong>
-              <span class="project-date">2025.10 - 2025.11</span>
+              <span class="project-date">2025.10.29 - 2025.11.21</span>
             </div>
-            <span class="project-tag">팀 프로젝트</span>
+            <span class="project-tag">Flutter 프로젝트</span>
           </div>
           <p class="text">사용자 맞춤형 코스 추천 및 토론 <strong>커뮤니티 서비스</strong></p>
+
           <div class="project-info">
             <div class="info-group">
-              <strong class="label blue">주요 역할</strong>
+              <strong class="label blue">주요 역할 및 성과</strong>
               <ul class="role-list">
                 <li>Supabase oAuth를 통한 구글 로그인 및 회원 관리(가입/탈퇴) 로직 전담</li>
-                <li>Supabase Realtime 기반의 실시간 알림 기능 구현</li>
+                <li>Supabase Realtime 기반의 <strong>실시간 알림 기능 구현</strong></li>
                 <li>사용자 경험 개선을 위한 앱 온보딩 프로세스 구축</li>
-                <li>코드 리뷰 및 디버깅을 통한 전체적인 앱 안정성 피드백 수행</li>
+                <li>사용성 테스트 기반 피드백 반영으로 <strong>사용자 경험 20% 개선</strong></li>
               </ul>
             </div>
+            
             <div class="info-group">
               <strong class="label">기술 스택</strong>
               <p class="tech-stack"><strong>Flutter, Dart, Supabase, Provider, Naver Map SDK, OAuth2</strong></p>
             </div>
-            <div class="info-footer">
-              <span>👥 4인 (팀원, [시스템 설계 - 앱 개발] 참여)</span>
-            </div>
           </div>
+
+          <div class="info-footer">
+            <span>👥 4인 (팀원, [시스템 설계 - 앱 개발] 참여)</span>
+          </div>
+
           <div class="project-links">
-            <a href="https://www.canva.com/design/DAG5NHOcpPs/rwEepMa8gZq0cBx4vAXOTw/view?utm_content=DAG5NHOcpPs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h265c89a981"
-              target="_blank" class="btn-link primary">프로젝트 상세 보기 →</a>
+            <a href="https://www.canva.com/design/DAG5NHOcpPs/rwEepMa8gZq0cBx4vAXOTw/view" target="_blank"
+              class="btn-link primary">프로젝트 상세 보기 →</a>
             <a href="https://github.com/LIKELION-Android-BOOTCAMP-5th/team_3_Of_Course" target="_blank"
               class="btn-link github">GitHub →</a>
           </div>
         </div>
-
-
       </div>
     </section>
 
@@ -220,8 +259,6 @@
       <div id="modal-body"></div>
     </div>
   </dialog>
-
-  <script src="project-detail.js"></script>
 </body>
 
 </html>
